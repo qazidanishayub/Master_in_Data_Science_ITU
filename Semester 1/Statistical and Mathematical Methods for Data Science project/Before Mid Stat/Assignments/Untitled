@@ -1,0 +1,362 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "prob & stats distribution.ipynb",
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DsUhtU-YB9_x",
+        "outputId": "7a0cc6d3-4ecf-43a9-bc1a-5762909496f4"
+      },
+      "source": [
+        "from scipy.stats import binom\n",
+        "n = 10 # Total number of coins \n",
+        "p = .25 # Probability of head\n",
+        "# Let x denotes number of heads\n",
+        "#x = range(0,3)\n",
+        "# for x1 in x:\n",
+        "#   print(x1)\n",
+        "x=[1]\n",
+        "#Compute probabilities\n",
+        "prob = binom.pmf(x, n, p) \n",
+        "#print probabilities \n",
+        "print(prob)\n",
+        "#[0.03125 0.15625 0.3125 0.3125 \n",
+        "#0.15625 0.03125]\n",
+        "sumOfProb = sum(prob)\n",
+        "print('Sum of probabilities is:', \n",
+        "sumOfProb)\n",
+        "# Sum of probabilities is: 1.0"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[0.18771172]\n",
+            "Sum of probabilities is: 0.18771171569824247\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "eEW14Q2SEVh9",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "ba9e8ba2-8232-487b-b468-bf53dffdf6d1"
+      },
+      "source": [
+        "from scipy.stats import nbinom\n",
+        "p = 0.3\n",
+        "x = 5\n",
+        "prob = round(geom.pmf(x, p), 4) \n",
+        "print( prob)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0.072\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4HNpSfov3FTG",
+        "outputId": "b798a74a-6469-4268-df0c-d068b675eb6a"
+      },
+      "source": [
+        "from scipy.stats import hypergeom\n",
+        "#at max\n",
+        "N = 10 # Total number of cards \n",
+        "n = 3 # Total number of cards randomly selected \n",
+        "k = 1 # Since ther e are 26 red cards\n",
+        "x = 0 # Two red cards\n",
+        "prob= hypergeom.pmf(x, N, n, k)\n",
+        "# Compute probabilities corresponding to random variable x\n",
+        "print('Probability is :', prob)\n",
+        "# Probability is : 0.3251"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Probability is : 0.7000000000000006\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fZnziG9q8JC1",
+        "outputId": "a326dad6-3940-4e18-f910-358f0fe550af"
+      },
+      "source": [
+        "x=.3*0.16666666666666674\n",
+        "y=.7*0.7000000000000006\n",
+        "z=x+y\n",
+        "z"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.5400000000000004"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mppAfOEizgnU",
+        "outputId": "aafc9f12-fd5d-473a-a71a-5a0f3aa45f58"
+      },
+      "source": [
+        "from scipy.stats import hypergeom\n",
+        "#at max\n",
+        "N = 15 # Total number of cards \n",
+        "n = 7 # Total number of cards randomly selected \n",
+        "k = 5 # Since ther e are 26 red cards\n",
+        "x = 3 # Two red cards\n",
+        "maxnum=min(n,k)\n",
+        "print(maxnum)\n",
+        "x=range(x,maxnum+1)\n",
+        "prob= hypergeom.pmf(x, N, n, k)\n",
+        "prob=round(sum(prob),4)\n",
+        "# Compute probabilities corresponding to random variable x\n",
+        "print('Probability is :', prob)\n",
+        "# Probability is : 0.3251"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "5\n",
+            "Probability is : 0.4266\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aKEk9aMRgzlQ",
+        "outputId": "38892675-f874-41e8-b7ef-16c0cb52a340"
+      },
+      "source": [
+        "from scipy.stats import hypergeom\n",
+        "#at least\n",
+        "N = 15 # Total number of cards \n",
+        "n = 7 # Total number of cards randomly selected \n",
+        "k = 5 # Since ther e are 26 red cards\n",
+        "x = 3 # Two red cards\n",
+        "minnum=max(0,n-(N-k))\n",
+        "x=range(minnum,x)\n",
+        "prob= hypergeom.pmf(x, N, n, k)\n",
+        "prob=sum(prob)\n",
+        "prob=1-prob\n",
+        "# Compute probabilities corresponding to random variable x\n",
+        "print('Probability is :', prob)\n",
+        "# Probability is : 0.3251\n"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "Probability is : 0.4265734265734258\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QG7O58ypIX-O",
+        "outputId": "0901e843-776c-4841-acab-b9036e2fcaad"
+      },
+      "source": [
+        "import numpy as np\n",
+        "import matplotlib.pyplot as plt\n",
+        "from scipy.stats import hypergeom\n",
+        "[N, n, k] = [15, 7, 5]\n",
+        "lLimit = max(0, n-(N-k))\n",
+        "uLimit = min(n, k)\n",
+        "rv = hypergeom(N, n, k)\n",
+        "x = np.arange(lLimit, uLimit + 1)\n",
+        "probability = rv.pmf(x)\n",
+        "print(probability)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[0.01864802 0.16317016 0.39160839 0.32634033 0.09324009 0.00699301]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KLgqMRr7Pq86",
+        "outputId": "9315d473-c7fa-4f6e-ba68-7d0f208d9bcb"
+      },
+      "source": [
+        "from scipy.stats import poisson\n",
+        "\n",
+        "mu = 4\n",
+        "x = [6]\n",
+        "#x = list(range(0, 75))\n",
+        "#print(x)\n",
+        "prob = sum(poisson.pmf(x, \n",
+        "mu))\n",
+        "print( prob)"
+      ],
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0.10419563456702102\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "8VEDPwjOUaMR",
+        "outputId": "282376ad-66eb-4007-ae80-2e48fb6d630b"
+      },
+      "source": [
+        "mu = 1\n",
+        "max=1\n",
+        "x = range(0,max+1)\n",
+        "\n",
+        "prob = sum(poisson.pmf(x, \n",
+        "mu))\n",
+        "print(prob)"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0.7357588823428847\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "GCDS0mYrgXl8",
+        "outputId": "3ba9d33f-42b8-4f65-efd6-88f0835f0596"
+      },
+      "source": [
+        "from scipy.stats import geom\n",
+        "p = .25\n",
+        "x = 11\n",
+        "prob = round(geom.pmf(x, p), 4) \n",
+        "print( prob)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0.0141\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pyJUreJyllEB",
+        "outputId": "76dfca23-ebf2-4c4e-f674-a46f2e6372b8"
+      },
+      "source": [
+        ""
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0.0\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
