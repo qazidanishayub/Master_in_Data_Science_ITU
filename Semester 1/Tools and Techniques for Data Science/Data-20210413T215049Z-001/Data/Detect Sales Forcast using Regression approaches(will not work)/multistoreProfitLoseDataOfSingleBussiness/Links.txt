@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 https://www.toptal.com/artificial-intelligence/retail-sales-forecasting-ai
+=======
+https://www.toptal.com/artificial-intelligence/retail-sales-forecasting-ai
+>>>>>>> origin/main
 https://www.neuraldesigner.com/blog/retail-store-sales-forecasting

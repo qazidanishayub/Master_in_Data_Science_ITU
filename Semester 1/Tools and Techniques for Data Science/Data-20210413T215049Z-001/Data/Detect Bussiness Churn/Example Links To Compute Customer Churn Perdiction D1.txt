@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 https://learnpython.com/blog/python-customer-churn-prediction/
 
 https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling/version/1
 
 https://rapidminer.com/blog/use-machine-learning-to-drive-customer-retention/
 
+=======
+https://learnpython.com/blog/python-customer-churn-prediction/
+
+https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling/version/1
+
+https://rapidminer.com/blog/use-machine-learning-to-drive-customer-retention/
+
+>>>>>>> origin/main
 https://www.eteam.io/blog/customer-retention-with-machine-learning
