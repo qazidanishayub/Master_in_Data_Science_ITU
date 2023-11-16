@@ -1,0 +1,2 @@
+,auroc,auprc,accuracy,f_measure,f_beta_measure,g_beta_measure,challenge_metric
+CNN,0.88942826,0.428499535,0.051724138,0.398659525,0.544561735,0.223780071,0.566562993
